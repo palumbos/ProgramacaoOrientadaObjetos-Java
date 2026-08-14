@@ -37,3 +37,7 @@ replay_pid*
 # Operating system
 .DS_Store
 Thumbs.db
+/Atividade1Aula1_interfaceJOptionPane/nbproject/private/
+/Atividade1Aula1/nbproject/private/
+/Atividade1Aula1/build/
+/Atividade1Aula1/dist/
