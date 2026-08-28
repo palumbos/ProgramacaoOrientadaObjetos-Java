@@ -35,7 +35,8 @@ public class Main {
 
     public static void main(String args[]) {
         System.out.println("digite a matricula do aluno que voce quer cadastrar (digite 0 para encerrar)");
-        int matricula = input.nextInt;
+        int matricula = input.nextInt();
+        
 
 }
 }
