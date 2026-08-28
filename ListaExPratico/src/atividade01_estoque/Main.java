@@ -1,4 +1,4 @@
-package atividade_01;
+package atividade01_estoque;
 
 import java.util.Scanner;
 
