@@ -107,18 +107,18 @@ public class Main {
             System.out.println("o valor não pode ser negativo, tente novamente:");
             saldo = Double.parseDouble(input.nextLine());
         }
-            switch (numero) {
-                case 1:
-                    conta1 = new ContaBancaria(numero, titular, saldo);
-                    break;
-                case 2:
-                    conta2 = new ContaBancaria(numero, titular, saldo);
-                    break;
-                case 3:
-                    conta3 = new ContaBancaria(numero, titular, saldo);
-                    break;
-            }
-        
+        switch (numero) {
+            case 1:
+                conta1 = new ContaBancaria(numero, titular, saldo);
+                break;
+            case 2:
+                conta2 = new ContaBancaria(numero, titular, saldo);
+                break;
+            case 3:
+                conta3 = new ContaBancaria(numero, titular, saldo);
+                break;
+        }
+
     }
 
     public static void consultarSaldo() {
