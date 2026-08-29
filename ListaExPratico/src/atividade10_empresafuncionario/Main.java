@@ -31,12 +31,12 @@ class Funcionario {
 class Empresa {
 
     private String cnpj;
-    private String razãoSocial;
+    private String razaoSocial;
     private ArrayList<Funcionario> listaFuncionarios;
 
-    public Empresa(String cnpj, String razãoSocial) {
+    public Empresa(String cnpj, String razaoSocial) {
         this.cnpj = cnpj;
-        this.razãoSocial = razãoSocial;
+        this.razaoSocial = razaoSocial;
         this.listaFuncionarios = new ArrayList<>();
     }
 
@@ -44,8 +44,8 @@ class Empresa {
         return cnpj;
     }
 
-    public String getRazãoSocial() {
-        return razãoSocial;
+    public String getRazaoSocial() {
+        return razaoSocial;
     }
 
     public ArrayList<Funcionario> getListaFuncionarios() {
@@ -67,7 +67,7 @@ public class Main {
 
         while (opcao != 0) {
             System.out.println("""
-                           digite o numero referente a sua opção:
+                           digite o numero referente a sua opcao:
                            0 -  encerrar o programa.
                            1 -  Adicionar Empresa.
                            2 -  Adicionar Funcionario a uma Empresa.
@@ -102,9 +102,9 @@ public class Main {
         String cnpj = input.nextLine();
 
         System.out.println("digite a Razao Social da empresa:");
-        String razãoSocial = input.nextLine();
+        String razaoSocial = input.nextLine();
 
-        Empresa emp = new Empresa(cnpj, razãoSocial);
+        Empresa emp = new Empresa(cnpj, razaoSocial);
         listaEmpresas.add(emp);
         System.out.println("empresa adicionada com sucesso !!!");
     }
@@ -126,7 +126,7 @@ public class Main {
 
         System.out.println("Selecione o numero da empresa deste funcionario:");
         for (int i = 0; i < listaEmpresas.size(); i++) {
-            System.out.println((i + 1) + " - " + listaEmpresas.get(i).getRazãoSocial());
+            System.out.println((i + 1) + " - " + listaEmpresas.get(i).getRazaoSocial());
         }
 
         int escolha = Integer.parseInt(input.nextLine()) - 1;
@@ -148,7 +148,7 @@ public class Main {
 
         System.out.println("Selecione o numero da empresa que deseja consultar:");
         for (int i = 0; i < listaEmpresas.size(); i++) {
-            System.out.println((i + 1) + " - " + listaEmpresas.get(i).getRazãoSocial());
+            System.out.println((i + 1) + " - " + listaEmpresas.get(i).getRazaoSocial());
         }
 
         int escolha = Integer.parseInt(input.nextLine()) - 1;
@@ -157,7 +157,7 @@ public class Main {
             Empresa emp = listaEmpresas.get(escolha);
             ArrayList<Funcionario> funcionarios = emp.getListaFuncionarios();
 
-            System.out.println("Empresa: " + emp.getRazãoSocial() + " | CNPJ: " + emp.getCnpj());
+            System.out.println("Empresa: " + emp.getRazaoSocial() + " | CNPJ: " + emp.getCnpj());
             System.out.println("Quadros de Funcionarios:");
             if (funcionarios.isEmpty()) {
                 System.out.println("nenhum funcionario cadastrado nesta empresa !!!");
