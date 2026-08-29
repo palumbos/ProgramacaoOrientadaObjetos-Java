@@ -67,7 +67,7 @@ public class Main {
 
         while (opcao != 0) {
             System.out.println("""
-                           digite o numero referente a sua opção:
+                           digite o numero referente a sua opdção:
                            0 -  encerrar o programa.
                            1 -  Adicionar Setor.
                            2 -  Instalar Equipamento em um Setor.
