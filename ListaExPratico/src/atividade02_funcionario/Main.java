@@ -1,3 +1,5 @@
+package atividade02_funcionario;
+
 import java.util.Scanner;
 
 class Funcionario {
