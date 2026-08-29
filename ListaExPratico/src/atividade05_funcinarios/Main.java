@@ -1,9 +1,10 @@
-
 package atividade05_funcinarios;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 class Funcionario {
+
     private String nome;
     private String cargo;
 
@@ -22,6 +23,7 @@ class Funcionario {
 }
 
 class Departamento {
+
     private String nomeDepartamento;
     private ArrayList<Funcionario> listaFuncionarios;
 
@@ -94,7 +96,7 @@ public class Main {
 
     public static void cadastrarFuncionario() {
         if (listaDepartamentos.isEmpty()) {
-            System.out.println("nenhum departamento cadastrado, tente outra operação!!!");
+            System.out.println("nenhum departamento cadastrado, tente outra operacao!!!");
             return;
         }
 
@@ -122,7 +124,7 @@ public class Main {
 
     public static void consultarDepartamento() {
         if (listaDepartamentos.isEmpty()) {
-            System.out.println("nenhum departamento cadastrado, tente outra operação!!!");
+            System.out.println("nenhum departamento cadastrado, tente outra operacao!!!");
             return;
         }
 
@@ -150,3 +152,4 @@ public class Main {
         }
     }
 }
+// nessa eu adotei o array list que é muito melhor do que eu tava fazendo nos exercicios anteriores de criar 3 objetos fixos (ou 5) e usar um swich case pra escolher
