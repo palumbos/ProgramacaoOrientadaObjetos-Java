@@ -41,7 +41,7 @@ class EquipamentoInformatica {
         this.situacao = novaSituacao;
     }
 
-    public void setValor(int novoValor) {
+    public void setValor(double novoValor) {
         this.valor = novoValor;
     }
 }
@@ -120,7 +120,7 @@ public class Main {
                                """);
             situacao = Integer.parseInt(input.nextLine());
             while (situacao != 0 && situacao != 1) {
-                System.out.println("digite um numero valido, \n 0- sendo utilizado \n 1- não sendo utilizado");
+                System.out.println("digite um numero valido, \n 0- não sendo utilizado \n 1- sendo utilizado");
             situacao = Integer.parseInt(input.nextLine());
             }
             if (situacao == 0) {
@@ -188,6 +188,7 @@ public class Main {
             n = Integer.parseInt(input.nextLine());
             while (n != 0 && n != 1) {
                 System.out.println("digite um numero valido, \n 0- sendo utilizado \n 1- não sendo utilizado");
+            n = Integer.parseInt(input.nextLine());
             }
             if (n == 0) {
                 equipamento.setSituacao(false);
