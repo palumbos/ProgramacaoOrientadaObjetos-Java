@@ -38,7 +38,7 @@ class ContaBancaria {
         if (valor > 0 && valor <= this.saldo) {
             this.saldo -= valor;
         } else if (valor < 0) {
-            System.out.println("operação negada, voce precisa sacar um valor posito");
+            System.out.println("operação negada, voce precisa sacar um valor positivo");
         } else {
             System.out.println("operação negada, voce precisa sacar um valor menor ou igual ao seu saldo!!!");
         }
@@ -53,7 +53,7 @@ public class Main {
     static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int opcao = 4, codigo = 0;
+        int opcao = 4, numero = 0;
 
         while (opcao != 0) {
             System.out.println("""
@@ -68,8 +68,12 @@ public class Main {
 
             switch (opcao) {
                 case 1: {
-                    codigo++;
-                    criarConta(codigo);
+                    numero++;
+                    if (numero <= 3) {
+                        criarConta(numero);
+                    } else {
+                        System.out.println("voce atingiu o maximo de contas, tente outra operação!!!");
+                    }
                     break;
                 }
                 case 2:
@@ -92,19 +96,17 @@ public class Main {
     public static void criarConta(int numero) {
         String titular;
         double saldo;
+        System.out.println("o numero dessa conta é " + numero);
 
-        if (numero > 3) {
-            System.out.println("voce cadastrou o maximo de contas, Voltando ao Menu !!!");
-        } else {
+        System.out.println("digite o nome do titular da conta:");
+        titular = input.nextLine();
 
-            System.out.println("o numero dessa conta é " + numero);
-
-            System.out.println("digite o nome do titular da conta:");
-            titular = input.nextLine();
-
-            System.out.println("digite o saldo inicial da conta:");
+        System.out.println("digite o saldo inicial da conta:");
+        saldo = Double.parseDouble(input.nextLine());
+        while (saldo < 0) {
+            System.out.println("o valor não pode ser negativo, tente novamente:");
             saldo = Double.parseDouble(input.nextLine());
-
+        }
             switch (numero) {
                 case 1:
                     conta1 = new ContaBancaria(numero, titular, saldo);
@@ -116,7 +118,7 @@ public class Main {
                     conta3 = new ContaBancaria(numero, titular, saldo);
                     break;
             }
-        }
+        
     }
 
     public static void consultarSaldo() {
@@ -124,7 +126,7 @@ public class Main {
         if (conta == null) {
             return;
         }
-        System.out.println("o saldo da conta de numero: " + conta.getNumero() + " com o titular: "+ conta.getTitular()+"\n esta em: " + conta.getSaldo() + "R$");
+        System.out.println("o saldo da conta de numero: " + conta.getNumero() + " com o titular: " + conta.getTitular() + "\n esta em: " + conta.getSaldo() + "R$");
 
     }
 
@@ -158,8 +160,17 @@ public class Main {
     }
 
     public static ContaBancaria buscarConta() {
+        System.out.println("""
+                   Digite o número da conta que quer acessar:
+                   1- %s
+                   2- %s
+                   3- %s
+                   """.formatted(
+                conta1 != null && conta1.getTitular() != null ? conta1.getTitular() : "Conta sem titular",
+                conta2 != null && conta2.getTitular() != null ? conta2.getTitular() : "Conta sem titular",
+                conta3 != null && conta3.getTitular() != null ? conta3.getTitular() : "Conta sem titular"
+        ));
 
-        System.out.println("Digite o número da conta que quer acessar");
         int n = Integer.parseInt(input.nextLine());
 
         switch (n) {
