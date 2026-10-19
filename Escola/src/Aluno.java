@@ -12,8 +12,4 @@ public class Aluno extends Pessoa {
     public String toString() {
         return "Aluno{" + super.toString() + ", matricula='" + matricula + "'}";
     }
-
-    public String getNome() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
